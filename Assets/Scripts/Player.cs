@@ -62,4 +62,14 @@ public class Player : MonoBehaviour
         // 產生出子彈
         Instantiate(bulletPrefab, firePoint.transform.position, transform.rotation);
     }
+    IEnumerator keepshooting()
+    {
+        while (true)
+        {
+            Fire();
+
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
+
 }
